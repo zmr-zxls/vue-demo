@@ -1,0 +1,28 @@
+body, html {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/*Menu*/
+.menu{
+  position: relative;
+  list-style: none;
+  background-color: white;
+  margin-bottom: 0px;
+}
+.menu .menu-item{
+  float: left;
+  position: relative;
+  display: block;
+  padding: 8px 12px;
+}
+.menu .menu-item.active{
+  border-bottom: 1px solid blue;
+}
+.menu .menu-item:hover{
+  background-color: #F4F4F4;
+  cursor: pointer;
+}
+
+/*external helper class*/
