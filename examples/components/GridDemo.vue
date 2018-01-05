@@ -6,7 +6,7 @@
       </div>
     </form>
     <IButton class="pull-left" icon="plus" v-on:click="showAddModal = true">添加</IButton>
-    <Datatable :data="tableData" :columns="gridColumns" :filter-key="searchQuery"></Datatable>
+    <Datatable :data="tableData" :columns="gridColumns"></Datatable>
     <Modal :status="showAddModal" modalTitle = "添加" size="sm" v-on:modal-ok="addRow" v-on:modal-close="clearAddData">
       <form slot="body">
         <div class="input-group form-group">
@@ -25,7 +25,7 @@
 <script>
   import focus from '../directives/focus'
   var vueConfig = {
-    name: 'datatable',
+    name: 'GridDemo',
     directives: { focus },
     data () {
       return {

@@ -4,3 +4,10 @@ dist/
 npm-debug.log
 yarn-error.log
 .idea/workspace.xml
+.idea/encodings.xml
+.idea/jsLibraryMappings.xml
+.idea/vueDemo.iml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/libraries/vueDemo_node_modules.xml
