@@ -2,9 +2,9 @@
  一个vue2学习demo。从前端工程的构建，开发，测试，到发布学到不少。本案例仅用于学习。
 
 # 介绍
- - [x]本案例使用vue2+vue-router+webpack构建
- - [x]使用zui中的css来开发组件，减少自己去写样式
- - [x]参考了iview框架
+ - [1] 本案例使用vue2+vue-router+webpack构建
+ - [2] 使用zui中的css来开发组件，减少自己去写样式
+ - [3] 参考了iview框架
 
 # 组件简介
 ## grid component
