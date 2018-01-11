@@ -24,9 +24,11 @@
 
     <grid-demo></grid-demo>
 
-    <modal :status="showModal" v-on:modal-ok="showModal=false">
-      <h3 slot="header">Modal</h3>
-      <div slot="body">Vue Modal Components</div>
+    <modal :status="showModal" v-on:modal-ok="showModal=false" v-on:modal-close="showModal=false" okText="确定" size="sm" modalTitle = "检索">
+        <form onsubmit="return false;" style="margin-bottom: 8px;">
+          <IconInput icon="search" v-model="keywords" placeholder="输入检索"></IconInput>
+        </form>
+        <datatable :data="showData" :columns="gridColumns"></datatable>
     </modal>
   </div>
 </template>
@@ -38,7 +40,27 @@
     components: { GridDemo },
     data () {
       return {
-        showModal: false
+        showModal: false,
+        keywords: '',
+        gridColumns: ['name', 'power'],
+        gridData:[
+          { name: 'Chuck Norris', power: Infinity },
+          { name: 'Bruce Lee', power: 9000 },
+          { name: 'Jackie Chan', power: 7000 },
+          { name: 'Jet Li', power: 8000 }
+        ]
+      }
+    },
+    computed: {
+      showData () {
+        if (this.keywords) {
+           let keyword = this.keywords.toLowerCase()
+           return this.gridData.filter(v => {
+              return v.name.toLowerCase().indexOf(keyword) > -1 || v.power.toString().indexOf(keyword) > -1
+           })
+        } else {
+          return this.gridData
+        }
       }
     },
     methods: {

@@ -11,7 +11,7 @@
                </button>
              </slot>
            </div>
-           <div class="modal-body"><slot name="body"></slot></div>
+           <div class="modal-body"><slot name="body"></slot><slot></slot></div>
            <div class="modal-footer clearfix">
              <slot name="footer">
                <button class="btn btn-primary pull-right" @click="ok">

@@ -2,11 +2,8 @@
   <div class="app">
     <div class="nav-header">
       <img src="../assets/logo.png">
-      <IMenu class="pull-right" activeName="key1" v-on:on-select="onMenuSelect">
-        <iMenuItem name="key1"><icon name="user">menu2</icon></iMenuItem>
-        <iMenuItem name="key2"><icon name="user">menu3</icon></iMenuItem>
-        <iMenuItem name="key3"><icon name="user">menu4</icon></iMenuItem>
-        <iMenuItem name="key4"><icon name="user">menu5</icon></iMenuItem>
+      <IMenu class="pull-right" :activeName="activeMenuName" v-on:on-select="onMenuSelect">
+        <iMenuItem v-for="item in menus" :name="item.name" :key="item.id"><icon :name="item.icon">{{item.showName}}</icon></iMenuItem>
       </IMenu>
     </div>
     <div class="nav-left">
@@ -32,7 +29,9 @@
     mixins: [Mixin],
     data () {
       return {
-        transName: 'slide-left'
+        transName: 'slide-left',
+        activeMenuName: null,
+        menus: null
       }
     },
     watch: {
@@ -48,12 +47,29 @@
       },
       onMenuSelect (name) {
         console.log('select the menuName is ' + name)
+      },
+      initData () {
+        this.menus = [
+          {
+            id: '0', name: 'userSet', icon: 'user', showName: '用户设置'
+          },
+          {
+            id: '1', name: 'systemSet', icon: 'cog', showName: '系统设置'
+          },
+          {
+            id: '2', name: 'help', icon: 'smile', showName: '帮助'
+          }
+        ];
       }
     },
     created () {
       if (this.path) {
         this.jump(this.path)
       }
+    },
+    mounted () {
+      this.initData()
+      this.activeMenuName = 'userSet'
     }
   }
 </script>
