@@ -1,4 +1,4 @@
-require('./check-versions')()
+//require('./check-versions')()
 
 var config = require('../config')
 if (!process.env.NODE_ENV) {
@@ -64,7 +64,7 @@ app.use(hotMiddleware); //启用热部署
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static')) //静态资源
 
-var uri = 'http://10.52.10.81:' + port;
+var uri = 'http://localhost:' + port;
 
 devMiddleware.waitUntilValid(function () {
   console.log('> Listening at ' + uri + '\n')

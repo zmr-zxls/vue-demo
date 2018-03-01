@@ -159,7 +159,9 @@
   }
   .modal-leave-active .modal-dialog{
     opacity: 0;
-    -webkit-transform: rotateY(90deg);
-    transform: rotateY(90deg);
+   /* -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);*/
+    -webkit-transform: scale(0);
+    transform: scale(0);
   }
 </style>

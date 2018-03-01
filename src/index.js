@@ -11,6 +11,7 @@ import IMenu from './components/menu/menu.vue'
 import IMenuItem from './components/menu/menu-item.vue'
 import Modal from './components/modal'
 import Select from './components/select'
+import Switch from './components/switch/switch.vue'
 
 const vc = {
   IButton,
@@ -21,7 +22,8 @@ const vc = {
   IMenuItem,
   Modal,
   Option: Select.Option,
-  Select
+  Select,
+  ISwitch: Switch
 }
 
 const install = function (Vue, opt = {}) {

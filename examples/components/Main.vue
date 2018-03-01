@@ -17,13 +17,14 @@
                 <Option value="6">hello world5</Option>
               </Select>
             </li>
+            <li>
+              <ISwitch v-model="showModal" on="开" off="关"></ISwitch>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-
     <grid-demo></grid-demo>
-
     <modal :status="showModal" v-on:modal-ok="showModal=false" v-on:modal-close="showModal=false" okText="确定" size="sm" modalTitle = "检索">
         <form onsubmit="return false;" style="margin-bottom: 8px;">
           <IconInput icon="search" v-model="keywords" placeholder="输入检索"></IconInput>
