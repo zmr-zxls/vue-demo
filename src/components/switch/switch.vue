@@ -88,7 +88,6 @@
     cursor: pointer;
     transition: all .15s ease-out;
   }
-
   .switch-inner {
     width: 20px;
     height: 20px;

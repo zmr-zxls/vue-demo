@@ -20,6 +20,9 @@
             <li>
               <ISwitch v-model="showModal" on="开" off="关"></ISwitch>
             </li>
+            <li>
+              <Checkbox :checked="showModal" label="checkbox控件" align="right"></Checkbox>
+            </li>
           </ul>
         </div>
       </div>
